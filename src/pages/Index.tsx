@@ -4,6 +4,8 @@ import Icon from '@/components/ui/icon';
 const LOGO_URL = 'https://cdn.poehali.dev/projects/510f64f3-4cd6-476c-9e22-19d3c4bc2718/bucket/611b4c43-0e27-4ae8-8dad-870f42b270cc.jpg';
 const HERO_ART_URL = 'https://cdn.poehali.dev/projects/510f64f3-4cd6-476c-9e22-19d3c4bc2718/bucket/9493f6e9-381c-4b9c-bbce-9828d4ac7fe1.png';
 const ABOUT_IMG_URL = 'https://cdn.poehali.dev/projects/510f64f3-4cd6-476c-9e22-19d3c4bc2718/bucket/7f545eee-7c64-485d-9cd4-7d859ae47455.png';
+const KITSUNE_URL = 'https://cdn.poehali.dev/projects/510f64f3-4cd6-476c-9e22-19d3c4bc2718/bucket/f91f2eb9-310d-4694-9e25-0bf5ed81fdf0.jpg';
+const GRAFFITI_URL = 'https://cdn.poehali.dev/projects/510f64f3-4cd6-476c-9e22-19d3c4bc2718/bucket/834b8176-13dd-49ef-bdf4-33d191bdb3ea.png';
 
 const products = [
   {
@@ -242,89 +244,25 @@ const Index = () => {
       </nav>
 
       {/* HERO */}
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background abstract art */}
-        <div className="absolute inset-0">
+      <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+
+        {/* Central art */}
+        <div
+          className="relative z-10 flex flex-col items-center justify-center w-full flex-1 opacity-0 animate-fade-in"
+          style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
+        >
           <img
-            src={HERO_ART_URL}
-            alt=""
-            className="w-full h-full object-cover opacity-30"
-            style={{ filter: 'saturate(1.4) contrast(1.2)' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-[#0A0A0A]/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
-          <div className="max-w-2xl">
-            {/* Pre-title */}
-            <div
-              className="flex items-center gap-3 mb-8 opacity-0 animate-fade-in"
-              style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
-            >
-              <span className="w-8 h-px bg-[#FF00CC]" />
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-[#FF00CC]">
-                SS 2026 COLLECTION
-              </span>
-            </div>
-
-            {/* Main title */}
-            <h1
-              className="font-display font-bold leading-none mb-6 opacity-0 animate-fade-up animate-glitch"
-              style={{
-                fontSize: 'clamp(4rem, 12vw, 9rem)',
-                animationDelay: '0.3s',
-                animationFillMode: 'forwards',
-              }}
-            >
-              FURI
-              <br />
-              <span style={{ color: '#FF00CC', textShadow: '0 0 30px rgba(255,0,204,0.4)' }}>
-                RANSA
-              </span>
-            </h1>
-
-            <p
-              className="font-body text-sm text-[#888] max-w-xs leading-relaxed mb-10 opacity-0 animate-fade-up"
-              style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
-            >
-              Streetwear из другого измерения. Японская мистика, уличная культура, тёмная эстетика.
-            </p>
-
-            <div
-              className="flex gap-4 opacity-0 animate-fade-up"
-              style={{ animationDelay: '0.65s', animationFillMode: 'forwards' }}
-            >
-              <button
-                onClick={() => scrollTo('catalog')}
-                className="font-display text-sm tracking-widest uppercase bg-[#FF00CC] text-black px-8 py-4 hover:bg-white transition-all duration-300 font-medium"
-              >
-                Shop Now
-              </button>
-              <button
-                onClick={() => scrollTo('about')}
-                className="font-display text-sm tracking-widest uppercase border border-[#333] text-[#888] px-8 py-4 hover:border-[#F2F2F2] hover:text-[#F2F2F2] transition-all duration-300"
-              >
-                О бренде
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Floating logo */}
-        <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block animate-float">
-          <img
-            src={LOGO_URL}
+            src={KITSUNE_URL}
             alt="Furiransa"
-            className="w-80 h-80 object-contain opacity-60 animate-pulse-glow"
-            style={{ mixBlendMode: 'screen' }}
+            className="w-full max-w-2xl object-contain animate-pulse-glow"
+            style={{ maxHeight: '85vh' }}
           />
         </div>
 
         {/* Bottom scroll hint */}
-        <div className="absolute bottom-10 left-6 flex items-center gap-3">
-          <div className="w-px h-12 bg-gradient-to-b from-[#FF00CC] to-transparent" />
-          <span className="font-body text-[9px] tracking-[0.4em] uppercase text-[#444] [writing-mode:vertical-lr]">Scroll</span>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+          <span className="font-body text-[9px] tracking-[0.4em] uppercase text-[#333]">Scroll</span>
+          <div className="w-px h-8 bg-gradient-to-b from-[#444] to-transparent" />
         </div>
       </section>
 
@@ -426,60 +364,72 @@ const Index = () => {
       </section>
 
       {/* CONTACTS */}
-      <section id="contacts" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20">
-            {/* Left */}
+      <section id="contacts" className="relative min-h-screen overflow-hidden">
+        {/* Graffiti background */}
+        <div className="absolute inset-0">
+          <img
+            src={GRAFFITI_URL}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 h-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+
+            {/* Left — contacts */}
             <div>
               <p className="font-body text-[10px] tracking-[0.4em] uppercase text-[#FF00CC] mb-6">// Контакты</p>
-              <h2 className="font-display text-5xl font-bold leading-tight mb-10">
+              <h2 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-12">
                 ПИШИТЕ.<br />
-                <span className="text-[#333]">МЫ ОТКРЫТЫ.</span>
+                <span className="text-white/30">МЫ ОТКРЫТЫ.</span>
               </h2>
-              <div className="space-y-5">
+              <div className="space-y-4">
                 {[
                   { icon: 'Mail', label: 'Email', value: 'drop@furiransa.ru' },
                   { icon: 'Send', label: 'Telegram', value: '@furiransa' },
                   { icon: 'Instagram', label: 'Instagram', value: '@furiransa' },
                   { icon: 'MapPin', label: 'Город', value: 'Москва, Россия' },
                 ].map(({ icon, label, value }) => (
-                  <div key={label} className="flex gap-4 items-center border-b border-[#1A1A1A] pb-5 group hover:border-[#FF00CC]/30 transition-colors">
+                  <div key={label} className="flex gap-4 items-center border-b border-white/10 pb-4 group hover:border-[#FF00CC]/50 transition-colors">
                     <Icon name={icon} fallback="CircleAlert" size={14} className="text-[#FF00CC] shrink-0" />
                     <div className="flex justify-between w-full">
-                      <span className="font-body text-[10px] tracking-widest uppercase text-[#444]">{label}</span>
-                      <span className="font-body text-sm text-[#888] group-hover:text-[#F2F2F2] transition-colors">{value}</span>
+                      <span className="font-body text-[10px] tracking-widest uppercase text-white/30">{label}</span>
+                      <span className="font-body text-sm text-white/60 group-hover:text-white transition-colors">{value}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Form */}
-            <div className="border border-[#1E1E1E] p-10 bg-[#0D0D0D]">
-              <p className="font-display text-sm tracking-widest uppercase text-[#555] mb-8">Написать нам</p>
+            {/* Right — form */}
+            <div className="bg-black/50 backdrop-blur-md border border-white/10 p-10">
+              <p className="font-display text-sm tracking-widest uppercase text-white/30 mb-8">Написать нам</p>
               <div className="space-y-6">
                 <div>
-                  <label className="font-body text-[9px] tracking-widest uppercase text-[#555] block mb-2">Имя</label>
+                  <label className="font-body text-[9px] tracking-widest uppercase text-white/30 block mb-2">Имя</label>
                   <input
                     type="text"
                     placeholder="Твоё имя"
-                    className="w-full bg-transparent border-b border-[#1E1E1E] py-2 font-body text-sm outline-none focus:border-[#FF00CC] transition-colors placeholder:text-[#333] text-[#F2F2F2]"
+                    className="w-full bg-transparent border-b border-white/10 py-2 font-body text-sm outline-none focus:border-[#FF00CC] transition-colors placeholder:text-white/20 text-white"
                   />
                 </div>
                 <div>
-                  <label className="font-body text-[9px] tracking-widest uppercase text-[#555] block mb-2">Email или Telegram</label>
+                  <label className="font-body text-[9px] tracking-widest uppercase text-white/30 block mb-2">Email или Telegram</label>
                   <input
                     type="text"
                     placeholder="@ник или email"
-                    className="w-full bg-transparent border-b border-[#1E1E1E] py-2 font-body text-sm outline-none focus:border-[#FF00CC] transition-colors placeholder:text-[#333] text-[#F2F2F2]"
+                    className="w-full bg-transparent border-b border-white/10 py-2 font-body text-sm outline-none focus:border-[#FF00CC] transition-colors placeholder:text-white/20 text-white"
                   />
                 </div>
                 <div>
-                  <label className="font-body text-[9px] tracking-widest uppercase text-[#555] block mb-2">Сообщение</label>
+                  <label className="font-body text-[9px] tracking-widest uppercase text-white/30 block mb-2">Сообщение</label>
                   <textarea
                     placeholder="Вопрос, коллаборация, идея..."
                     rows={4}
-                    className="w-full bg-transparent border-b border-[#1E1E1E] py-2 font-body text-sm outline-none focus:border-[#FF00CC] transition-colors placeholder:text-[#333] text-[#F2F2F2] resize-none"
+                    className="w-full bg-transparent border-b border-white/10 py-2 font-body text-sm outline-none focus:border-[#FF00CC] transition-colors placeholder:text-white/20 text-white resize-none"
                   />
                 </div>
                 <button className="w-full bg-[#FF00CC] text-black font-display text-sm tracking-widest uppercase py-4 hover:bg-white transition-colors duration-300 font-semibold">
@@ -487,6 +437,7 @@ const Index = () => {
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       </section>
